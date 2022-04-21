@@ -67,7 +67,7 @@ fila.RemoverQueue()
 fila.RemoverQueue()
 console.log('-------------------------')
 
-fila.AddQueue('Cristina')
+fila.AddQueue('Clarice')
 console.log('-------------------------')
 
 fila.viewQueue()

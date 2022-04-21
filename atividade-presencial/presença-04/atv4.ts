@@ -56,10 +56,10 @@ class Queue{
 
 let fila: Queue = new Queue()
 
-fila.AddQueue('Clau')
-fila.AddQueue('Maria')
-fila.AddQueue('Pedro')
-fila.AddQueue('Julia')
+fila.AddQueue('Carlos')
+fila.AddQueue('Mauricio')
+fila.AddQueue('Paulo')
+fila.AddQueue('Ana')
 console.log('-------------------------')
 
 fila.RemoverQueue()

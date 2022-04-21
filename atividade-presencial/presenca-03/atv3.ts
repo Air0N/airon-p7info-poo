@@ -1,11 +1,9 @@
 class Stack{
-    
     stack: number[] = []
     topo: number = -1
     maxStack = 4
 
-    
-    isEmpty(): number{
+    Vazio(): number{
         if(this.topo == -1){
             return 1
         }else{
@@ -13,7 +11,7 @@ class Stack{
         }
     }
 
-    isFull(): number{
+    Cheio(): number{
         if(this.topo == this.maxStack){
             return 1
         }else{
@@ -22,7 +20,7 @@ class Stack{
     }
     
     push(num: number): void{
-        if(this.isFull() == 1){
+        if(this.Cheio() == 1){
             console.log('A Pilha está cheia.')
         }else{
             this.topo++
@@ -32,7 +30,7 @@ class Stack{
     }
     
     pop(): number | void{
-        if(this.isEmpty() == 1){
+        if(this.Vazio() == 1){
             console.log('A Pilha está vazia')
         }else{
             let aux = this.stack[this.topo]
@@ -43,7 +41,7 @@ class Stack{
     }
     
     view(): void{
-        if(this.isEmpty() == 1){
+        if(this.Vazio() == 1){
             console.log('A Pilha está vazia')
          }else{
             for(let i = 0; i <= this.topo; i++)

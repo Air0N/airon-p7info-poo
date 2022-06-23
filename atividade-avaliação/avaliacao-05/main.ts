@@ -21,9 +21,9 @@ console.log("Codigo=" + cliente.getcodigo());
 console.log("CnpjCpf=" + cliente.getcnpjcpf());
 console.log("TipoCliente=" + cliente.gettipo());
 
-let p1 = new Produto(1, 150, "Arroz Tio Joao", 6.00);
-let p2 = new Produto(2, 200,"Feijão Janjão", 5.00);
-let p3 = new Produto(3, 300, "Farinha da Boa", 8.00);
+let p1 = new Produto(1, 150, "Arroz Tio Joao", 8.00);
+let p2 = new Produto(2, 200,"Feijão Janjão", 7.00);
+let p3 = new Produto(3, 300, "Farinha da Boa", 5.50);
 
 let nf = new NotaFiscal(1, 201, cliente);
 
@@ -49,7 +49,5 @@ console.log("=========================");
 console.log(nf);
 console.log("=========================");
 
-
+nf.calcValNF()
 nf.imprimirNotaFiscal()
-
-

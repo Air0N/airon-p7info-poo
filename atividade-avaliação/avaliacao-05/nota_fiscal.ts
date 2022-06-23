@@ -57,16 +57,36 @@ export class NotaFiscal {
     }
 
     // Percorrer o array items e calcular o valor total da NotaFiscal
-    calcularValorNotaFiscal() : number {
-        let valorCalculado = 0;
-
-        return valorCalculado;
+    calcValNF() : void {
+        let valor = 0
+        for(let i = 0; i < this.items.length; i++) {
+            let valorQuant = this.items[i].getquantidade()*this.items[i].getvalor()
+            valor += valorQuant;
+        }
+        console.log("Valor total da nota retirada: " + valor)
     }
 
     // Imprimir a NotaFiscal conforme o Layout definido
     
     imprimirNotaFiscal(): void {
-
+        var Total = new Date();
+        console.log("---------------------------------------------------------------------")
+        console.log("Nota Fiscal                                            ", Total)
+        console.log("Cliente:", this.cliente.getcodigo(), "|", "Nome: ", this.cliente.getnome())
+        console.log("CPF: ", this.cliente.getcnpjcpf())
+        console.log("---------------------------------------------------------------------")
+        console.log("ITENS")
+        console.log("---------------------------------------------------------------------")
+        console.log("SEQ    DESCRIÇÃO                           QTD     VALOR UNIT   PREÇO")
+        console.log("---------------------------------------------------------------------")
+        for(let count = 0; count < this.items.length; count++) {
+            let precoTotal = this.items[count].getquantidade() * this.items[count].produto.getvalorUnitario()
+            this.valorNota += precoTotal
+            console.log("%i    %s                           %f     %f   %f",
+            this.items[count].getsequencial(), this.items[count].produto.getdescricao(), this.items[count].getquantidade(), this.items[count].produto.getvalorUnitario(), this.items[count].getvalor())
+        }
+        console.log("---------------------------------------------------------------------")
+        console.log("Valor total: ", this.valorNota)
 
     }
 
